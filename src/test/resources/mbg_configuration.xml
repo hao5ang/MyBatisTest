@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+		location="D:\maven-repository-lashou\postgresql\postgresql\9.1-901-1.jdbc4\postgresql-9.1-901-1.jdbc4.jar" />
+	<context id="context1">
+		<property name="javaFileEncoding" value="utf-8" />
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<!-- 
+		<plugin type="org.mybatis.generator.plugin.PaginationPGPlugin" />
+		<plugin type="org.mybatis.generator.plugin.CommentPlugin">
+			<property name="modelClassAuthor" value="WangHao" />
+		</plugin>
+		 -->
+		<commentGenerator>
+			<!-- 不生成注解信息 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="org.postgresql.Driver"
+			connectionURL="jdbc:postgresql://localhost:5432/postgres" userId="postgres"
+			password="smile" />
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.gmail.waohao.model"
+			targetProject="MyBatisTest" />
+		<sqlMapGenerator targetPackage="com.gmail.waohao.mapper"
+			targetProject="MyBatisTest" />
+		<javaClientGenerator targetPackage="com.gmail.waohao.mapper"
+			targetProject="MyBatisTest" type="XMLMAPPER" />
+		<table schema="public" tableName="demo" domainObjectName="Demo">
+			<!-- <columnOverride column="mtime" javaType="java.sql.Timestamp" /> -->
+		</table>
+	</context>
+</generatorConfiguration>
